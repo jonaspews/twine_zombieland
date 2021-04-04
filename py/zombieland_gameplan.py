@@ -6,8 +6,10 @@
 
 from list_of_cities import cities  # cities is a very long list, kept seperate for easier programming
 import random
-import time
+# import time  # TODO: delete later, if not needed
 from datetime import date
+import csv
+import sys
 
 '''
 TWINE-syntax
@@ -69,6 +71,34 @@ def create_twine_syntax_if():
 
 def create_gameplan():
     print(dict_of_players)
+    try:
+        csvfile = open("zombieland_gameplan.csv")
+    except:
+        print("Datei nicht vorhanden!")
+        sys.exit(0)
+
+    with open('zombieland_gameplan.csv', 'w', newline='') as empty_gameplan:
+        headers = ['date',
+                    'student',
+                     'class',
+                      'playername',
+                       'code_level1',
+                        'code_level2',
+                          'code_level3',
+                            'code_level4']
+        csvwriter = csv.DictWriter(empty_gameplan, fieldnames=headers)
+        csvwriter.writeheader()
+        for i in dict_of_players:
+            csvwriter.writerow({'date': date.today(),
+                                'student': '',
+                                'class': '',
+                                'playername': i,
+                                'code_level1': (dict_of_players[i])[0],
+                                'code_level2': (dict_of_players[i])[1],
+                                'code_level3': (dict_of_players[i])[2],
+                                'code_level4': (dict_of_players[i])[3]})
+
+
 
 # list of player names, keep empty here, is filled in main program
 dict_of_players = {}
