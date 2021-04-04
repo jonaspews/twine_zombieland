@@ -5,45 +5,26 @@
 # TODO: think about out sourcing list to seperate file ... so far that works better
 
 from list_of_cities import cities  # cities is a very long list, kept seperate for easier programming
-import random
+import random  # needed to create random codes
 # import time  # TODO: delete later, if not needed
-from datetime import date
-import csv
-import sys
+from datetime import date  # needed for time stamp in CSV
+import csv  # needed for CSV-file manipulation
+import sys  # needed for try/exception
 
-'''
-TWINE-syntax
-(if: $size is 'giant')[
-    an intimidating rumble!
-](else-if: $size is 'big')[
-    a loud growl
-](else:​)[
-    a faint gurgle
-]
+# *****************************************************
+# *                                                   *
+# * Function: create TWINE syntax for jumpcode-arrays *
+# * ************************************************* *
+# *****************************************************
 
-**********************
+# example for TWINE syntax for arrays (with prompt for USER):
 
-(set: $code to (prompt: "what is your code:", "code"))
-(set: $jumpCodes to (a: "1","2","3"))
+# (set: $code to (prompt: "what is your code:", "code"))
+# (set: $jumpCodes to (a: "1","2","3"))
 
-Your stomach makes {
-(if: $code is in $jumpCodes)[
-    gesprungen nach [[test1]]
-](else-if: $code is '9')[
-    megacheat9 [[test2]]
-](else:)[
-    nix
-]}.
-
-
-
-'''
-
-# list of levels, change names and number of levels to your needs
-level_names = ['level1', 'level2', 'level3', 'level4']
 
 def create_twine_syntax_arrays():
-    print('<!-- Syntax created on ' + str(date.today()) +' -->')
+    print('<!-- Syntax created on ' + str(date.today()) +' -->')  # create TWINE syntax for diplaying date when rest of syntax for the specific game was created
     print('(set: $code to (prompt: "what is your code:", "code"))')  # create syntax for TWINE user prompt
     # create syntax for TWINE jumpCode arrays
     # for every level there needs to be an array (a: ...) which collects all the codes for every player for
@@ -51,23 +32,47 @@ def create_twine_syntax_arrays():
     for h in level_names:
         syntax_string = '(set: $jumpCodes_' + str(h) + ' to (a: '
         for i in dict_of_players:
+            # create random jumpcodes for each level
             jumpcode = random.randrange(1000000, 1000000000, 1)  # TODO: needs checking whether jumpcode already exists
             syntax_string = syntax_string + "\"" + str(jumpcode) + "\","
-            # TODO: add timestamp if CSV and TWINE syntax
-            # TODO: also store this info in an pair/array for creation of CSV
-            dict_of_players[i].append(jumpcode)
-        syntax_string = syntax_string[:-1] + "))"
+            dict_of_players[i].append(jumpcode)  # store jumpcodes in python-dict for each player, used for CSV-writing
+        syntax_string = syntax_string[:-1] + "))"  # delete last comma from string
         print(syntax_string)
+
+# ***************************************************
+# *                                                 *
+# * Function: create TWINE syntax for if-statements *
+# * *********************************************** *
+# ***************************************************
+
+# example for TWINE syntax for if-statements:
+
+# Your stomach makes {
+# (if: $code is in $jumpCodes)[
+#     gesprungen nach [[test1]]
+# ](else-if: $code is '9')[
+#     megacheat9 [[test2]]
+# ](else:)[
+#     nix
+# ]}.
+
 
 def create_twine_syntax_if():
     print('Let\'s see {')
     for h in level_names:
-        print('(if: $code is in $jumpcodes_' + str(h) + ')[')
+        print('(if: $code is in $jumpCodes_' + str(h) + ')[')  # TODO: this needs to be if-else
         print('    gesprungen nach [[' + str(h) + ']]')
         print(']')
     print('(else:)[')
     print('    You cannot cheat Zombies! You are dead!!!')
     print(']}')
+
+# ************************************************
+# *                                              *
+# * Function: create gameplan as CSV for teacher *
+# * ******************************************** *
+# ************************************************
+
 
 def create_gameplan():
     print(dict_of_players)
@@ -82,7 +87,7 @@ def create_gameplan():
                     'student',
                      'class',
                       'playername',
-                       'code_level1',
+                       'code_level1',   # number of levels must fit number of levels in level_names list (main part)
                         'code_level2',
                           'code_level3',
                             'code_level4']
@@ -98,11 +103,20 @@ def create_gameplan():
                                 'code_level3': (dict_of_players[i])[2],
                                 'code_level4': (dict_of_players[i])[3]})
 
+# *****************
+# *****************
+# *!! MAIN PART !!*
+# *****************
+# *****************
 
-
+# list of levels, change names and number of levels to your needs
+level_names = ['level1', 'level2', 'level3', 'level4']
 # list of player names, keep empty here, is filled in main program
 dict_of_players = {}
+# variable for while-loop
 c = False
+
+# prompt gamemaster (== teacher) how many students will play game
 number_players = int(input('Wie viele Spieler//How many players: '))
 
 for j in range(number_players):
@@ -116,8 +130,8 @@ for j in range(number_players):
     dict_of_players[player_names] = []
 
 print('')
-create_twine_syntax_arrays()
+create_twine_syntax_arrays()  # TODO: think about copying this directly in twine-HTML?!?! oder extra text-file
 print('')
-create_twine_syntax_if()
+create_twine_syntax_if()    # TODO: think about copying this directly in twine-HTML?!?! oder extra text-file
 print('')
 create_gameplan()
