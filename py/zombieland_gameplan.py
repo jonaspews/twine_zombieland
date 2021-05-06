@@ -24,6 +24,8 @@ import sys  # needed for try/exception
 
 
 def create_twine_syntax_arrays():
+    print('<!-- ************************************ -->')
+    print('<!-- for TWINE-syntax: start copying here -->')
     print('<!-- Syntax created on ' + str(date.today()) +' -->')  # create TWINE syntax for diplaying date when rest of syntax for the specific game was created
     print('(set: $code to (prompt: "what is your code:", "code"))')  # create syntax for TWINE user prompt
     # create syntax for TWINE jumpCode arrays
@@ -127,11 +129,12 @@ for j in range(number_players):
             player_names = cities[int(random.randrange(0, len(cities), 1))]
         else:
             c = True
-    dict_of_players[player_names] = []
+    dict_of_players[player_names] = []  # add key(player_name)-vlaue(empty)-pair to dictionary
 
 print('')
 create_twine_syntax_arrays()  # TODO: think about copying this directly in twine-HTML?!?! oder extra text-file
 print('')
 create_twine_syntax_if()    # TODO: think about copying this directly in twine-HTML?!?! oder extra text-file
-print('')
+print('<!-- for TWINE-Syntax: stop copy here -->')
+print('<!-- ******************************** -->')
 create_gameplan()
