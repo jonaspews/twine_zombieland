@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Zombieland.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Zombieland" startnode="10" creator="Twine" creator-version="2.3.13" ifid="BF49F792-2EBB-4B1F-A054-B9ABAAC95E3F" zoom="1" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">if (! window.TestTest) {
+<tw-storydata name="Zombieland" startnode="9" creator="Twine" creator-version="2.3.13" ifid="BF49F792-2EBB-4B1F-A054-B9ABAAC95E3F" zoom="1" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">if (! window.TestTest) {
 	window.TestTest = function() {
 		console.log("test");
 		return true;
@@ -33,8 +33,6 @@ Deine Bekannstschaft //TippiToe52// aus der Chatgruppe hat dir eine Nachricht hi
 Du blickst dich verwundert um. 
 
 [[Du rufst alle an, die du kennst .................. -&gt;keiner da]]
-
-[[Du hast ein Deja-Vu und kennst das alles schon ... -&gt;Level Springen]]
 </tw-passagedata><tw-passagedata pid="3" name="keiner da" tags="" position="125,426" size="100,100">Niemand nimmt ab. Keiner da!
 
 Was soll das? Wo sind alle? Ist das ein Scherz?
@@ -48,8 +46,7 @@ Du scrollst dich durch die Chatverläufe. Du hast überall tausende von Nachrich
 &#39;&#39;Taipeh:&#39;&#39; //&quot;Ah, viel besser. Na dann Leute, ihr wisst wo ihr mich hoffentlich finden könnt. Und haltet euch von den Zombies fern!!!&quot;//
 
 [[Wo willst du hin-&gt;Neues Abenteuer]]
-
-[[Ich habe schon einen Namen-&gt;Level Springen]]</tw-passagedata><tw-passagedata pid="4" name="Neues Abenteuer" tags="" position="125,547" size="100,100">(set: $name to (prompt: &quot;Hm, wie nennst du dich denn jetzt:&quot;, &quot;Name&quot;))
+</tw-passagedata><tw-passagedata pid="4" name="Neues Abenteuer" tags="" position="125,547" size="100,100">(set: $name to (prompt: &quot;Hm, wie nennst du dich denn jetzt:&quot;, &quot;Name&quot;))
 
 Ja, //$name// gefällt dir als neuer Name.
 
@@ -63,15 +60,7 @@ Wohin gehst du?
 
 [[Schule]]
 
-[[Eltern]]</tw-passagedata><tw-passagedata pid="5" name="Level Springen" tags="" position="371,329" size="100,100">Dir kommt das hier alles bekannt vor?
-
-(set: $levelcode to (prompt: &quot;Welchen ZUgangscode hast du?&quot;, &quot;Code&quot;))
-
-(if:$levelcode is &quot;1234&quot;)
-	[right, lets go to [[test]]! shall we ]
-(else: )
-	[hallo]
-</tw-passagedata><tw-passagedata pid="6" name="Polizei" tags="" position="0,697" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="7" name="Krankenhaus" tags="" position="120,697" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="8" name="Schule" tags="" position="240,697" size="100,100">Du nimmst dein altes, klappriges Fahrrad und radelst los. 
+[[Eltern]]</tw-passagedata><tw-passagedata pid="5" name="Polizei" tags="" position="0,697" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="6" name="Krankenhaus" tags="" position="120,697" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="7" name="Schule" tags="" position="240,697" size="100,100">Du nimmst dein altes, klappriges Fahrrad und radelst los. 
 Der hintere Reifen muss mal wieder aufgepumpt werden, die Gangschaltung funktioniert schon ewig nicht mehr und die Kette ist schon so gut wie druchgerostet.
 Und was die Bremsen angeht ............. wer bremst, verliert. Also lieber nicht benutzen.
 
@@ -81,31 +70,31 @@ Da siehst du einige Menschen am Ende der leeren Straße. Was tust du?
 
 [[Egal, ich fahre direkt zur Schule. -&gt;Schulgebäude]]
 [[Bei Fremden soll man misstrauisch sein. Ich fahre leise auf sie zu. -&gt; Zombies leise]]
-[[Ich fahre auf sie zu und rufe laut. -&gt; Zombies laut]] </tw-passagedata><tw-passagedata pid="9" name="Eltern" tags="" position="350,697" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="10" name="Start" tags="" position="23,11" size="100,100">[[Ok, neues Spiel-&gt;Willkommen]]
+[[Ich fahre auf sie zu und rufe laut. -&gt; Zombies laut]] </tw-passagedata><tw-passagedata pid="8" name="Eltern" tags="" position="350,697" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="9" name="Start" tags="" position="23,11" size="100,100">[[Ok, neues Spiel-&gt;Willkommen]]
 
-[[Ich habe schon mal gespielt-&gt;Level Springen]]</tw-passagedata><tw-passagedata pid="11" name="test" tags="" position="371,479" size="100,100">Double-click this passage to edit it.
+[[Ich habe schon mal gespielt-&gt;NameSetting]]</tw-passagedata><tw-passagedata pid="10" name="test" tags="" position="413,377" size="100,100">Double-click this passage to edit it.
 
 test a JS function
 
 &lt;script&gt;doInvisableTask();&lt;/script&gt;
-&lt;script&gt;TestTest();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="12" name="Schulgebäude" tags="" position="519,845" size="100,100">Du hast ee zum Schulgebäude geschafft.
+&lt;script&gt;TestTest();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="11" name="Schulgebäude" tags="" position="519,845" size="100,100">Du hast ee zum Schulgebäude geschafft.
 
 Sicherheitshalber gehst du leise um das ganze Gebäude. Aber du findest weder Zombies noch andere Menschen. Überraschenderweise siehst du auch nirgends irgendwelche Spuren von Leichen.
 
 Diesmal müssen die Behörden den Lockdown auch in Schulen ernst genommen haben.
 
-[[Aber alle Türen sind verschlossen-&gt;Offenes Fenster]]</tw-passagedata><tw-passagedata pid="13" name=" Zombies leise" tags="" position="315,847" size="100,100">Du fährst leise auf die kleine Gruppe von Menschen zu.
+[[Aber alle Türen sind verschlossen-&gt;Offenes Fenster]]</tw-passagedata><tw-passagedata pid="12" name=" Zombies leise" tags="" position="315,847" size="100,100">Du fährst leise auf die kleine Gruppe von Menschen zu.
 
 Da siehst du das mehrere von ihnen auf dem Boden hocken und über irgendwas kauern.
 
 
-Je näher du kommst, [[desto mehr erkennst du. -&gt; zombiefruehstueck]]</tw-passagedata><tw-passagedata pid="14" name=" Zombies laut" tags="" position="195,847" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="15" name=" zombiefruehstueck" tags="" position="315,997" size="100,100">Das &quot;irgendetwas&quot; ist ein Mensch! Und die anderen verspeisen ihn gerade zum Frühstück (oder Mittag?)!!
+Je näher du kommst, [[desto mehr erkennst du. -&gt; zombiefruehstueck]]</tw-passagedata><tw-passagedata pid="13" name=" Zombies laut" tags="" position="195,847" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="14" name=" zombiefruehstueck" tags="" position="315,997" size="100,100">Das &quot;irgendetwas&quot; ist ein Mensch! Und die anderen verspeisen ihn gerade zum Frühstück (oder Mittag?)!!
 
 
 Während der eine Teil deines Gehirns laut aufschreien und in Panik geraten möchte. Übernimmt der andere Teil in einem großen psychologischen Kraftakt die Kontrolle.
 
 
-Du drehst leise, ganz, ganz leise um. [[Jetzt doch direkt zur Schule -&gt;Schulgebäude]] </tw-passagedata><tw-passagedata pid="16" name="Fachbereich" tags="" position="794,845" size="100,100">Wo willst du jetzt hin?
+Du drehst leise, ganz, ganz leise um. [[Jetzt doch direkt zur Schule -&gt;Schulgebäude]] </tw-passagedata><tw-passagedata pid="15" name="Fachbereich" tags="" position="794,845" size="100,100">Wo willst du jetzt hin?
 
 [[Erstmal ein Schnitzelbrötchen-&gt;Mensa]]
 
@@ -113,46 +102,46 @@ Du drehst leise, ganz, ganz leise um. [[Jetzt doch direkt zur Schule -&gt;Schulg
 
 [[Physik]]
 
-[[Biologie]]</tw-passagedata><tw-passagedata pid="17" name="Mensa" tags="" position="798,667" size="100,100">Die Mensa ist zu. 
+[[Biologie]]</tw-passagedata><tw-passagedata pid="16" name="Mensa" tags="" position="798,667" size="100,100">Die Mensa ist zu. 
 
 Du findest nicht einmal ein abgelaufenes Snickers.
 
-[[Also zurück zum Eingang-&gt;Fachbereich]]</tw-passagedata><tw-passagedata pid="18" name="Chemie" tags="" position="963,712" size="100,100">Im Schulgebäude hat jedes Fach hat einen eigenen Flur. Und neuerdings sind alle Türen mit Code-Schlössern gesichert. 
+[[Also zurück zum Eingang-&gt;Fachbereich]]</tw-passagedata><tw-passagedata pid="17" name="Chemie" tags="" position="963,712" size="100,100">Im Schulgebäude hat jedes Fach hat einen eigenen Flur. Und neuerdings sind alle Türen mit Code-Schlössern gesichert. 
 
 Da es schwere Brandschutztüren sind, ist Gewalt sinnlos.
 
 Mist, wie kommt man jetzt rein?
 
-[[Was tun-&gt;FachlehrerIn]]</tw-passagedata><tw-passagedata pid="19" name="Physik" tags="" position="959,852" size="100,100">Im Schulgebäude hat jedes Fach hat einen eigenen Flur. Und neuerdings sind alle Türen mit Code-Schlössern gesichert. 
+[[Was tun-&gt;FachlehrerIn]]</tw-passagedata><tw-passagedata pid="18" name="Physik" tags="" position="959,852" size="100,100">Im Schulgebäude hat jedes Fach hat einen eigenen Flur. Und neuerdings sind alle Türen mit Code-Schlössern gesichert. 
 
 Da es schwere Brandschutztüren sind, ist Gewalt sinnlos.
 
 Mist, wie kommt man jetzt rein?
 
-[[Was tun-&gt;FachlehrerIn]]</tw-passagedata><tw-passagedata pid="20" name="Biologie" tags="" position="962,985" size="100,100">Im Schulgebäude hat jedes Fach hat einen eigenen Flur. Und neuerdings sind alle Türen mit Code-Schlössern gesichert. 
+[[Was tun-&gt;FachlehrerIn]]</tw-passagedata><tw-passagedata pid="19" name="Biologie" tags="" position="962,985" size="100,100">Im Schulgebäude hat jedes Fach hat einen eigenen Flur. Und neuerdings sind alle Türen mit Code-Schlössern gesichert. 
 
 Da es schwere Brandschutztüren sind, ist Gewalt sinnlos.
 
 Mist, wie kommt man jetzt rein?
 
-[[Was tun-&gt;FachlehrerIn]]</tw-passagedata><tw-passagedata pid="21" name="Offenes Fenster" tags="" position="657,847" size="100,100">Endlich, du hast ein offenes Fenster gefunden und bist eingestiegen. 
+[[Was tun-&gt;FachlehrerIn]]</tw-passagedata><tw-passagedata pid="20" name="Offenes Fenster" tags="" position="657,847" size="100,100">Endlich, du hast ein offenes Fenster gefunden und bist eingestiegen. 
 
 Du machst das Fenster hinter dir zu. Im Schulgebäude herrscht unheimliche Stille.
 
-[[Was nun?-&gt;Fachbereich]]</tw-passagedata><tw-passagedata pid="22" name="FachlehrerIn" tags="" position="1121,852" size="100,100">Da fällt dir ein, dass //TippiToe52// ... äh, sorry &#39;&#39;Taipeh&#39;&#39; ... sagte, dass das Internet funktioniert.
+[[Was nun?-&gt;Fachbereich]]</tw-passagedata><tw-passagedata pid="21" name="FachlehrerIn" tags="" position="1121,852" size="100,100">Da fällt dir ein, dass //TippiToe52// ... äh, sorry &#39;&#39;Taipeh&#39;&#39; ... sagte, dass das Internet funktioniert.
 
 [[Check mal Insta-&gt;Insta]]
-[[Vielleicht steht was in der Schul-App-&gt;KontaktLehrerIn01]]</tw-passagedata><tw-passagedata pid="23" name="Insta" tags="" position="1183,988" size="100,100">Nix los auf den sozialen Medien.
+[[Vielleicht steht was in der Schul-App-&gt;KontaktLehrerIn01]]</tw-passagedata><tw-passagedata pid="22" name="Insta" tags="" position="1183,988" size="100,100">Nix los auf den sozialen Medien.
 
 Die Algorithmen haben alle Bilder mit Zombies wegen Gewaltverherlichung geblockt.
 
-[[Genug abgelenkt. Mal die Schul-App checken-&gt;KontaktLehrerIn01]]</tw-passagedata><tw-passagedata pid="24" name="KontaktLehrerIn01" tags="" position="1259,855" size="100,100">Du scrollst durch die letzten Nachrichten.
+[[Genug abgelenkt. Mal die Schul-App checken-&gt;KontaktLehrerIn01]]</tw-passagedata><tw-passagedata pid="23" name="KontaktLehrerIn01" tags="" position="1259,855" size="100,100">Du scrollst durch die letzten Nachrichten.
 
 Hm, irgendwas von Schulschließung und Distanzlernen. Auch nix neues.
 
 Aber da siehst du den Status deiner Lehrkraft.
 
-[[Wie kann das sein?-&gt;KontaktLehrerIn02]]</tw-passagedata><tw-passagedata pid="25" name="KontaktLehrerIn02" tags="" position="1390,858" size="100,100">UNglaublich. Deine Lehrkraft lebt noch....und nennt sich jetzt &#39;&#39;TeachOnTheBeach&#39;&#39;(?!)...das waren wohl ein paar Sonnenstrahlen zu viel.
+[[Wie kann das sein?-&gt;KontaktLehrerIn02]]</tw-passagedata><tw-passagedata pid="24" name="KontaktLehrerIn02" tags="" position="1390,858" size="100,100">UNglaublich. Deine Lehrkraft lebt noch....und nennt sich jetzt &#39;&#39;TeachOnTheBeach&#39;&#39;(?!)...das waren wohl ein paar Sonnenstrahlen zu viel.
 
 Du schreibst sofort im Chat los.
 
@@ -166,7 +155,41 @@ Du schreibst sofort im Chat los.
 
 //TeachOnTheBeach// schrieb: &quot;Hallo zurück $name. Was geht ab? Klingt ja übel. Was machst du denn in der Schule? Also ich freu mich ja, dass du was lernen willst, aber während der Zombieapokalypse?&quot;
 
-//$name// schrieb: &quot;Sehr witzig!!</tw-passagedata></tw-storydata>
+//$name// schrieb: &quot;Sehr witzig!! Alle anderen sind nicht mehr da. Und hier ist erst einmal kein Zombie. Aber hier kann ich auch nicht ewig bleiben.&quot;
+
+//TeachOnTheBeach// schrieb: &quot;Das würde ich mir überlegen. Ein großes Gebäude, schwere Türen, Zaun drumrum. Sicher ist es da allemal, wenn du keine Zombies reinlässt.&quot;
+
+//$name// schrieb: &quot;Hier gibt&#39;s aber nix zu Essen!&quot;
+
+//TeachOnTheBeach// schrieb: &quot;Oh, da kann ich dir helfen. Ich gebe dir erst einmal den Code für die Labortür.&quot;
+
+[[Na dann mal los-&gt;KeyPad]]</tw-passagedata><tw-passagedata pid="25" name="KeyPad" tags="" position="1385,459" size="100,100">&lt;!-- Syntax created on 2021-05-06 --&gt;
+(set: $code to (prompt: &quot;what is your code:&quot;, &quot;code&quot;))
+(set: $jumpCodes_level1 to (a: &quot;449675194&quot;,&quot;471283606&quot;,&quot;406949813&quot;,&quot;907311992&quot;,&quot;647361364&quot;,&quot;781721678&quot;,&quot;898507857&quot;,&quot;252952606&quot;,&quot;716455688&quot;,&quot;932637588&quot;,&quot;409181364&quot;,&quot;162484075&quot;,&quot;174621340&quot;,&quot;159856655&quot;,&quot;316696559&quot;,&quot;117237273&quot;,&quot;991350031&quot;,&quot;454982087&quot;,&quot;7664371&quot;,&quot;457544148&quot;,&quot;326371582&quot;,&quot;974312069&quot;,&quot;22638250&quot;,&quot;383425395&quot;,&quot;630049706&quot;,&quot;998875836&quot;,&quot;814129542&quot;,&quot;381881894&quot;,&quot;581564499&quot;,&quot;899699115&quot;))
+(set: $jumpCodes_level2 to (a: &quot;539201280&quot;,&quot;342121543&quot;,&quot;486876570&quot;,&quot;305526125&quot;,&quot;457004889&quot;,&quot;303458987&quot;,&quot;527382746&quot;,&quot;460562553&quot;,&quot;833046937&quot;,&quot;291603563&quot;,&quot;222090515&quot;,&quot;892869741&quot;,&quot;356569912&quot;,&quot;638707958&quot;,&quot;848009675&quot;,&quot;715354849&quot;,&quot;87558676&quot;,&quot;729434534&quot;,&quot;551432780&quot;,&quot;600804171&quot;,&quot;356514578&quot;,&quot;463674541&quot;,&quot;560444568&quot;,&quot;156730532&quot;,&quot;95833773&quot;,&quot;68830950&quot;,&quot;285936222&quot;,&quot;452868455&quot;,&quot;536398244&quot;,&quot;481731626&quot;))
+(set: $jumpCodes_level3 to (a: &quot;935404510&quot;,&quot;678380318&quot;,&quot;602743135&quot;,&quot;183929278&quot;,&quot;656772860&quot;,&quot;174729347&quot;,&quot;851271468&quot;,&quot;512504938&quot;,&quot;271946999&quot;,&quot;828784646&quot;,&quot;682536556&quot;,&quot;828819140&quot;,&quot;651827309&quot;,&quot;42954833&quot;,&quot;143455170&quot;,&quot;192586575&quot;,&quot;146868087&quot;,&quot;348398253&quot;,&quot;664818902&quot;,&quot;72149716&quot;,&quot;480893220&quot;,&quot;305129649&quot;,&quot;388578585&quot;,&quot;36143417&quot;,&quot;137433561&quot;,&quot;811296805&quot;,&quot;762452292&quot;,&quot;921629328&quot;,&quot;841803262&quot;,&quot;234748992&quot;))
+(set: $jumpCodes_level4 to (a: &quot;571556243&quot;,&quot;803726467&quot;,&quot;692069445&quot;,&quot;144902727&quot;,&quot;671326107&quot;,&quot;383959517&quot;,&quot;720034822&quot;,&quot;200044299&quot;,&quot;411728105&quot;,&quot;361957217&quot;,&quot;628719813&quot;,&quot;962537624&quot;,&quot;460334602&quot;,&quot;546141921&quot;,&quot;120778796&quot;,&quot;147189403&quot;,&quot;717394945&quot;,&quot;650600899&quot;,&quot;342372997&quot;,&quot;999259565&quot;,&quot;759192306&quot;,&quot;477300209&quot;,&quot;547329102&quot;,&quot;4669540&quot;,&quot;356330740&quot;,&quot;613592535&quot;,&quot;54552423&quot;,&quot;677633034&quot;,&quot;865941598&quot;,&quot;328960096&quot;))
+
+Let&#39;s see {
+(if: $code is in $jumpCodes_level1)[
+    gesprungen nach [[level1]]
+]
+(if: $code is in $jumpCodes_level2)[
+    gesprungen nach [[level2]]
+]
+(if: $code is in $jumpCodes_level3)[
+    gesprungen nach [[level3]]
+]
+(if: $code is in $jumpCodes_level4)[
+    gesprungen nach [[level4]]
+]
+(else:)[
+    You cannot cheat Zombies! You are dead!!!
+]}</tw-passagedata><tw-passagedata pid="26" name="NameSetting" tags="" position="599,85" size="100,100">Willkommen zurück.
+
+(set: $name to (prompt: &quot;Hm, wer warst du gleich noch mal?:&quot;, &quot;Name&quot;))
+
+[[Öffne die nächste Tür-&gt;KeyPad]] </tw-passagedata><tw-passagedata pid="27" name="level1" tags="" position="1718,355" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="28" name="level2" tags="" position="1724,488" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="29" name="level3" tags="" position="1725,616" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="30" name="level4" tags="" position="1727,743" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,i=!1,a=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){i=!0,a=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw a}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
