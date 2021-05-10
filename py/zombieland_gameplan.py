@@ -60,14 +60,18 @@ def create_twine_syntax_arrays():
 
 
 def create_twine_syntax_if():
-    print('Let\'s see {')
-    for h in level_names:
-        print('(if: $code is in $jumpCodes_' + str(h) + ')[')  # TODO: this needs to be if-else
+    print('Los geht\'s: {')
+    print('(if: $code is in $jumpCodes_' + str(level_names[0]) + ')[')  # creates query for first level jump
+    print('    gesprungen nach [[' + str(level_names[0]) + ']]')
+    print(']')
+    for h in level_names[1:]:
+        print('(else-if: $code is in $jumpCodes_' + str(h) + ')[')  # all other queries need to be else-if
         print('    gesprungen nach [[' + str(h) + ']]')
         print(']')
     print('(else:)[')
     print('    You cannot cheat Zombies! You are dead!!!')
-    print(']}')
+    print(']')
+    print('}')
 
 # ************************************************
 # *                                              *
