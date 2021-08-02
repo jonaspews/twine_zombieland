@@ -128,7 +128,7 @@ number_players = int(input('Wie viele Spieler//How many players: '))
 for j in range(number_players):
     player_names = cities[int(random.randrange(0, len(cities), 1))]
     print(player_names)
-    while c == False:
+    while c == False:  # TODO: rename Boolean Variables so that they are semantically useful e.g. isComplete = True
         if player_names in dict_of_players:
             player_names = cities[int(random.randrange(0, len(cities), 1))]
         else:
