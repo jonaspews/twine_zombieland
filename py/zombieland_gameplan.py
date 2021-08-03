@@ -116,7 +116,7 @@ def create_gameplan():
 # *****************
 
 # list of levels, change names and number of levels to your needs
-level_names = ['chRaffinerie', 'level2', 'level3', 'level4']
+level_names = ['chRaffinerie', 'chStrukturKW', 'level3', 'level4']
 # list of player names, keep empty here, is filled in main program
 dict_of_players = {}
 # variable for while-loop
