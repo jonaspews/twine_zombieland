@@ -31,11 +31,20 @@ def create_twine_syntax_arrays():
     # create syntax for TWINE jumpCode arrays
     # for every level there needs to be an array (a: ...) which collects all the codes for every player for
     # a certain level
+    jumpcode_is_unique = False
+    list_of_jumpcodes = []
+
     for h in level_names:
         syntax_string = '(set: $jumpCodes_' + str(h) + ' to (a: '
         for i in dict_of_players:
             # create random jumpcodes for each level
-            jumpcode = random.randrange(1000000, 1000000000, 1)  # TODO: needs checking whether jumpcode already exists
+            jumpcode = random.randrange(1000000, 1000000000, 1)
+            while jumpcode_is_unique == False:
+                if jumpcode in list_of_jumpcodes:
+                    jumpcode = random.randrange(1000000, 1000000000, 1)
+                else:
+                    jumpcode_is_unique = True
+                    list_of_jumpcodes.append(jumpcode)  # TODO: needs checking whether jumpcode already exists
             syntax_string = syntax_string + "\"" + str(jumpcode) + "\","
             dict_of_players[i].append(jumpcode)  # store jumpcodes in python-dict for each player, used for CSV-writing
         syntax_string = syntax_string[:-1] + "))"  # delete last comma from string
@@ -62,11 +71,11 @@ def create_twine_syntax_arrays():
 def create_twine_syntax_if():
     print('Los geht\'s: {')
     print('(if: $code is in $jumpCodes_' + str(level_names[0]) + ')[')  # creates query for first level jump
-    print('    gesprungen nach [[' + str(level_names[0]) + ']]')
+    print('    [[Und los->' + str(level_names[0]) + ']]')
     print(']')
     for h in level_names[1:]:
         print('(else-if: $code is in $jumpCodes_' + str(h) + ')[')  # all other queries need to be else-if
-        print('    gesprungen nach [[' + str(h) + ']]')
+        print('    [[Geh durch die Tür->' + str(h) + ']]')
         print(']')
     print('(else:)[')
     print('    You cannot cheat Zombies! You are dead!!!')
@@ -90,13 +99,16 @@ def create_gameplan():
 
     with open('zombieland_gameplan.csv', 'w', newline='') as empty_gameplan:
         headers = ['date',
-                    'student',
-                     'class',
-                      'playername',
-                       'code_level1',   # number of levels must fit number of levels in level_names list (main part)
-                        'code_level2',
-                          'code_level3',
-                            'code_level4']
+                     'student',
+                       'class',
+                          'playername',
+                            'code_level1',   # number of levels must fit number of levels in level_names list (main part)
+                              'code_level2',
+                                'code_level3',
+                                  'code_level4',
+                                    'code_level5',
+                                      'code_level6',
+                                        'code_level7']
         csvwriter = csv.DictWriter(empty_gameplan, fieldnames=headers)
         csvwriter.writeheader()
         for i in dict_of_players:
@@ -107,7 +119,10 @@ def create_gameplan():
                                 'code_level1': (dict_of_players[i])[0],
                                 'code_level2': (dict_of_players[i])[1],
                                 'code_level3': (dict_of_players[i])[2],
-                                'code_level4': (dict_of_players[i])[3]})
+                                'code_level4': (dict_of_players[i])[3],
+                                'code_level5': (dict_of_players[i])[4],
+                                'code_level6': (dict_of_players[i])[5],
+                                'code_level7': (dict_of_players[i])[6]})
 
 # *****************
 # *****************
@@ -116,7 +131,7 @@ def create_gameplan():
 # *****************
 
 # list of levels, change names and number of levels to your needs
-level_names = ['chRaffinerie', 'chStrukturKW', 'chBrennbarkeitAlkane', 'chHomologeReihe']
+level_names = ['chRaffinerie', 'chStrukturKW', 'chBrennbarkeitAlkane', 'chHomologeReihe', 'chViskositaet','chLoeslichkeit','chNomenklaturIsomere']
 # list of player names, keep empty here, is filled in main program
 dict_of_players = {}
 # variable for while-loop
